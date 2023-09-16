@@ -1,0 +1,68 @@
+<div class="main_page">
+  <div class="my-container">
+    <section class="main">
+      <div class="left_side">
+        <div class="title">
+          <h1 class="title_mustard">Самая вкусная пицца в мире</h1>
+          <h1 class="title_yellow">только в Pizza Cheff</h1>
+        </div>
+        <div class="list_of_advantages">
+          <div class="item_of_advantage">
+            <div class="icon"></div>
+            <div class="text">
+              <p class="title_of_advantage">ЛУЧШЕЕ ТЕСТО</p>
+              <p class="text_of_advantage">
+                Мы создаем тесто только из отборной итальянской муки наивысшего
+                качества
+              </p>
+            </div>
+          </div>
+
+          <div class="item_of_advantage">
+            <div class="icon"></div>
+            <div class="text">
+              <p class="title_of_advantage">ЛУЧШИЕ ПОВАРА</p>
+              <p class="text_of_advantage">
+                Пиццы готовят самые профессиональные итальянские повара
+              </p>
+            </div>
+          </div>
+
+          <div class="item_of_advantage">
+            <div class="icon"></div>
+            <div class="text">
+              <p class="title_of_advantage">ГАРАНТИЯ КАЧЕСТВА</p>
+              <p class="text_of_advantage">
+                Наша пиццерия получила множество наград и признаний по всему
+                миру
+              </p>
+            </div>
+          </div>
+
+          <div class="item_of_advantage">
+            <div class="icon"></div>
+            <div class="text">
+              <p class="title_of_advantage">ОТБОРНЫЕ РЕЦЕПТЫ</p>
+              <p class="text_of_advantage">
+                Мы используем рецепты от мировых лидеров в изготовлении пиццы
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <button class="btn" (click)="scrollTo(select_pizza)">
+            Выбрать пиццу
+          </button>
+        </div>
+      </div>
+      <div class="rigth_img_side"></div>
+    </section>
+    <section class="select_pizza" #select_pizza>
+      <div class="title">Выберете свою любимую пиццу</div>
+      <div class="pizza_list">
+        <app-card *ngFor="let card of pizzasList" [item]="card"></app-card>
+      </div>
+    </section>
+  </div>
+</div>

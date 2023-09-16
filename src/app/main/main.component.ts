@@ -14,11 +14,16 @@ export class MainComponent implements OnInit {
   constructor(private cartService: CartService) {}
   ngOnInit(): void {}
 
-  public scrollTo(target: HTMLElement): void {
-    target.scrollIntoView({ behavior: 'smooth' });
-  }
+  // public scrollTo(target: HTMLElement): void {
+  //   target.scrollIntoView({ behavior: 'smooth' });
+  // }
+  public orderForm = {
+    productTitle: this.cartService.nameOfProduct,
+    adress: '',
+    phone: '',
+  };
 
-  pizzasList: Product[] = [
+  public pizzasList: Product[] = [
     {
       id: 1,
       image: '../../assets/images/pizzaOne.png',

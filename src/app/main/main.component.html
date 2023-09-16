@@ -110,17 +110,16 @@
           </div>
         </div>
 
-        <div>
-          <button class="btn" (click)="scrollTo(select_pizza)">
-            Выбрать пиццу
-          </button>
+        <div class="btn_container">
+          <!-- <button class="btn" (click)="scrollTo(select_pizza)"> -->
+          <button class="btn">Выбрать пиццу</button>
         </div>
       </div>
       <div class="rigth_img_side">
         <img src="{{ imagePath }}" alt="pizza_big" />
       </div>
     </section>
-    <section class="select_pizza" #select_pizza>
+    <!-- <section class="select_pizza" #select_pizza>
       <div class="title">Выберете свою любимую пиццу</div>
       <div class="pizza_list">
         <app-card
@@ -148,14 +147,27 @@
         </div>
 
         <div class="order_form_inputs">
-          <input type="text" name="name" id="name" placeholder="Ваше имя" />
+          <input
+            type="text"
+            name="product_title"
+            id="product_title"
+            placeholder="Пицца"
+            [(ngModel)]="orderForm.productTitle"
+          />
           <input
             type="text"
             name="adress"
             id="adress"
             placeholder="Адрес доставки"
+            [(ngModel)]="orderForm.adress"
           />
-          <input type="text" name="phone" id="phone" placeholder="Телефон" />
+          <input
+            type="text"
+            name="phone"
+            id="phone"
+            placeholder="Телефон"
+            [(ngModel)]="orderForm.phone"
+          />
           <button type="submit">Оформить заказ</button>
         </div>
 
@@ -163,6 +175,6 @@
           <img src="{{ orderPizzaPathImg }}" alt="pizzaOrder" />
         </div>
       </div>
-    </section>
+    </section> -->
   </div>
 </div>

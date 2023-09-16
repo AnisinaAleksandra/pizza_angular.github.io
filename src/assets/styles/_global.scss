@@ -1,10 +1,9 @@
 @import "./variables";
 * {
-	padding: 0px;
-	margin: 0px;
-	border: none;
+  padding: 0px;
+  margin: 0px;
+  border: none;
 }
-
 
 html,
 body {
@@ -12,10 +11,10 @@ body {
   padding: 0;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
+  overflow-x: hidden;
 }
 
 .my-container {
   max-width: $container-width;
   margin: 0 auto;
 }
-

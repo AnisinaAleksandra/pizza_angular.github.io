@@ -81,13 +81,70 @@
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
-        padding-left: -13px;
-        padding-right: -13px;
+        margin-left: -13px;
+        margin-right: -13px;
       }
     }
 
     .order_form {
-      padding-top: 162px;
+      padding-top: 165px;
+      padding-bottom: 115px;
+      .my-container {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        flex-direction: row;
+        .order_form_delivery_text {
+          width: 380px;
+          .delivery_text_title {
+            font-size: 35px;
+            font-family: "MullerExtraBold";
+            font-weight: bold;
+            line-height: 1.286;
+            .title_yellow {
+              color: $yellow-light-text-color;
+            }
+            .title_mustard {
+              color: $mustard-text-color;
+            }
+          }
+          .delivery_text_description {
+            padding-top: 65px;
+            font-size: 16px;
+            font-family: "MullerRegular";
+            color: $mustard-text-color;
+            line-height: 1.5;
+          }
+        }
+        .order_form_inputs {
+          display: flex;
+          flex-direction: column;
+          input {
+            border: 1px solid $mustard-text-color;
+            background-color: white;
+            width: 306px;
+            height: 58px;
+            margin: 12px 0;
+            padding-left: 22px;
+
+            &::placeholder {
+              color: $mustard-text-color;
+              font-size: 18px;
+              font-family: "MullerRegular";
+            }
+          }
+          button {
+            display: block;
+            background-color: rgb(255, 175, 24);
+            width: 330px;
+            height: 60px;
+          }
+        }
+        .order_form_image {
+          position: relative;
+          top: 45px;
+        }
+      }
     }
   }
 }

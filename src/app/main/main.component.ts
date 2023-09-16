@@ -9,6 +9,8 @@ import { CartService } from '../service/cart-service';
 export class MainComponent implements OnInit {
   public nameOfProduct: string = this.cartService.nameOfProduct;
   public imagePath: string = '../../assets/images/pizza_big.png';
+  public orderPizzaPathImg: string =
+    '../../assets/images/pizzzzzaOrderForm.png';
   constructor(private cartService: CartService) {}
   ngOnInit(): void {}
 

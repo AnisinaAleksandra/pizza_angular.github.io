@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-logo',
+  selector: 'logo',
   templateUrl: './logo.component.html',
-  styleUrls: ['./logo.component.scss']
+  styleUrls: ['./logo.component.scss'],
 })
 export class LogoComponent {
-
+  imagePath = '../../../../assets/images/pizza.png';
 }

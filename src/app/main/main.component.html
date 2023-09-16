@@ -3,8 +3,8 @@
     <section class="main">
       <div class="left_side">
         <div class="title">
-          <h1 class="title_mustard">Самая вкусная пицца в мире</h1>
-          <h1 class="title_yellow">только в Pizza Cheff</h1>
+          <p class="title_mustard">Самая вкусная пицца в мире</p>
+          <p class="title_yellow">только в Pizza Cheff</p>
         </div>
         <div class="list_of_advantages">
           <div class="item_of_advantage">
@@ -131,6 +131,38 @@
       </div>
     </section>
 
-    <section class="order_form" #order_form>{{ nameOfProduct }}</section>
+    <section class="order_form" #order_form>
+      <div class="my-container">
+        <div class="order_form_delivery_text">
+          <div class="delivery_text_title">
+            <p class="title_yellow">Хватит думать!</p>
+            <p class="title_mustard">Доставим заказ за 30 минут!</p>
+          </div>
+          <div class="delivery_text_description">
+            Мы гарантированно доставим вашу пиццу за 30 минут с момента
+            оформления заказа. Если мы опоздаем даже на 1 минуту - вы получаете
+            весь заказ бесплатно и ваучер на скидку на следующий заказ. Мы
+            гордимся нашим сервисом и сделаем всё, чтобы наш клиент был доволен
+            и не остался голодный!
+          </div>
+        </div>
+
+        <div class="order_form_inputs">
+          <input type="text" name="name" id="name" placeholder="Ваше имя" />
+          <input
+            type="text"
+            name="adress"
+            id="adress"
+            placeholder="Адрес доставки"
+          />
+          <input type="text" name="phone" id="phone" placeholder="Телефон" />
+          <button type="submit">Оформить заказ</button>
+        </div>
+
+        <div class="order_form_image">
+          <img src="{{ orderPizzaPathImg }}" alt="pizzaOrder" />
+        </div>
+      </div>
+    </section>
   </div>
 </div>

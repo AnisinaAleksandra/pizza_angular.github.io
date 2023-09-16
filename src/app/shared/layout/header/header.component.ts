@@ -13,7 +13,7 @@ import {
 })
 export class HeaderComponent implements OnInit, AfterViewInit {
   @ViewChild('menu__toggle') toggle!: ElementRef;
-
+  imagePath = '../../../../assets/images/cart.png';
 
   constructor() {}
   ngOnInit(): void {}
@@ -22,6 +22,5 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     this.toggle.nativeElement.checked = false;
   }
 
-  ngAfterViewInit(): void {
-  }
+  ngAfterViewInit(): void {}
 }

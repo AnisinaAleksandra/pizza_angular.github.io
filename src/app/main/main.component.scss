@@ -249,7 +249,7 @@
   }
 }
 
-@media screen and (max-width: 615px) {
+@media screen and (max-width: 620px) {
   .main_page {
     .my-container {
       .main {
@@ -290,7 +290,7 @@
 @media screen and (max-width: 520px) {
   .main_page {
     padding-top: 50px;
-    s .my-container {
+    .my-container {
       .main {
         .left_side {
           .title {
@@ -306,6 +306,18 @@
         }
         .rigth_img_side {
           margin-top: 100px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 345px) {
+  .main_page {
+    .my-container {
+      .main {
+        .rigth_img_side {
+          margin-top: 150px;
         }
       }
     }

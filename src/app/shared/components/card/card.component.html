@@ -4,4 +4,7 @@
     <div class="card_pizza_description_name">{{ item.name }}</div>
     <div class="card_pizza_description_ingredients">{{ item.ingredients }}</div>
   </div>
+  <div class="card_pizza_btn">
+    <button (click)="serviceAddToCart(item.name, target)">В корзину</button>
+  </div>
 </div>

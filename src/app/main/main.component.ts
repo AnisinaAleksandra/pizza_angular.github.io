@@ -1,24 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Product } from '../types/product.type';
+import { CartService } from '../service/cart-service';
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],
 })
 export class MainComponent implements OnInit {
-  constructor() {}
+  public nameOfProduct: string = this.cartService.nameOfProduct;
+  public imagePath: string = '../../assets/images/pizza_big.png';
+  constructor(private cartService: CartService) {}
   ngOnInit(): void {}
 
   public scrollTo(target: HTMLElement): void {
     target.scrollIntoView({ behavior: 'smooth' });
   }
 
-  pizzasList: {
-    id: number;
-    image: string;
-    name: string;
-    ingredients: string;
-  }[] = [
+  pizzasList: Product[] = [
     {
       id: 1,
       image: '',

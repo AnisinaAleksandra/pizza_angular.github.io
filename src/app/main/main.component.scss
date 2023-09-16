@@ -3,62 +3,65 @@
 .main_page {
   padding-top: 132px;
   .my-container {
-    .left_side {
-      max-width: 620px;
-      height: 445px;
-      .title {
-        font-size: 20px;
-        line-height: 55px;
-        font-weight: 800;
-        font-family: "MullerExtraBold";
-        .title_mustard {
-          color: $mustard-text-color;
+    .main {
+      display: flex;
+      align-items: center;
+      .left_side {
+        max-width: 700px;
+        height: 445px;
+        .title {
+          font-size: 45px;
+          font-family: "MullerExtraBold";
+          .title_mustard {
+            color: $mustard-text-color;
+          }
+          .title_yellow {
+            color: $yellow-text-color;
+          }
         }
-        .title_yellow {
-          color: $yellow-text-color;
-        }
-      }
-      .list_of_advantages {
-        padding-top: 60px;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        .item_of_advantage {
+        .list_of_advantages {
+          padding-top: 60px;
           display: flex;
-          width: 300px;
-          margin-bottom: 47px;
-          .icon {
-            width: 78px;
-            height: 66;
-            background-color: aquamarine;
-          }
-          .text {
-            font-size: 16px;
-
-            .title_of_advantage {
-              line-height: 24px;
-              text-transform: uppercase;
-              color: $yellow-light-text-color;
-              font-weight: 800;
-              font-family: "MullerExtraBold";
+          flex-direction: row;
+          flex-wrap: wrap;
+          .item_of_advantage {
+            display: flex;
+            width: 300px;
+            margin-bottom: 47px;
+            margin-right: 47px;
+            align-items: center;
+            .icon {
+              padding-right: 16px;
             }
-            .text_of_advantage {
-              line-height: 16px;
-              color: $mustard-light-text-color;
-              font-family: "MullerRegular";
+            .text {
+              font-size: 16px;
+
+              .title_of_advantage {
+                line-height: 24px;
+                text-transform: uppercase;
+                color: $yellow-light-text-color;
+                font-weight: 800;
+                font-family: "MullerExtraBold";
+              }
+              .text_of_advantage {
+                line-height: 16px;
+                color: $mustard-light-text-color;
+                font-family: "MullerRegular";
+              }
             }
           }
         }
-      }
-      .btn {
-        padding: 24px 54px;
-        background-color: $yellow-light-text-color;
-        display: flex;
-        font-size: 16px;
-        line-height: 55px;
-        color: #382400;
-        font-weight: bold;
-        font-family: "MullerBold";
+        .btn {
+          background-color: $yellow-light-text-color;
+          font-size: 16px;
+          line-height: 55px;
+          color: #382400;
+          font-weight: bold;
+          font-family: "MullerBold";
+          width: 224px;
+          height: 60px;
+          cursor: pointer;
+        }
       }
     }
 

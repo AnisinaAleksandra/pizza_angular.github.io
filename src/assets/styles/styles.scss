@@ -1,3 +1,8 @@
 @import "variables";
 @import "fonts";
 @import "global";
+
+input.ng-invalid.ng-dirty,
+input.ng-invalid.ng-touched {
+  border-color: red;
+}

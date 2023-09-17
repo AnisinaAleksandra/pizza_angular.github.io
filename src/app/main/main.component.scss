@@ -126,12 +126,20 @@
             height: 58px;
             margin: 12px 0;
             padding-left: 22px;
-
+            &.error {
+              border: 1px solid red;
+              &::placeholder {
+                color: red;
+              }
+            }
             &::placeholder {
               color: $mustard-text-color;
               font-size: 18px;
               font-family: "MullerRegular";
             }
+          }
+          .error_message {
+            color: red;
           }
           button {
             display: block;
@@ -141,6 +149,11 @@
             font-size: 16px;
             font-family: "MullerBold";
             color: $mutard-darkest-text-color;
+            cursor: pointer;
+            &:disabled {
+              background-color: rgb(248, 208, 133);
+              cursor: not-allowed;
+            }
           }
         }
         .order_form_image {

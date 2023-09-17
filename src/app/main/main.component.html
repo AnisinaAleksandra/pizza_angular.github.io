@@ -119,7 +119,7 @@
         <img src="{{ imagePath }}" alt="pizza_big" />
       </div>
     </section>
-    <!-- <section class="select_pizza" #select_pizza>
+    <section class="select_pizza" #select_pizza>
       <div class="title">Выберете свою любимую пиццу</div>
       <div class="pizza_list">
         <app-card
@@ -146,35 +146,78 @@
           </div>
         </div>
 
-        <div class="order_form_inputs">
+        <form class="order_form_inputs" [formGroup]="orderForm">
           <input
+            required
             type="text"
             name="product_title"
             id="product_title"
             placeholder="Пицца"
-            [(ngModel)]="orderForm.productTitle"
+            formControlName="productTitle"
           />
+          <div
+            class="error_message"
+            *ngIf="(productTitle?.touched || productTitle?.dirty) && productTitle?.errors?.['required']"
+          >
+            Введите название пиццы
+          </div>
+          <div
+            class="error_message"
+            *ngIf="productTitle?.errors?.['productTitle'].value"
+          >
+            Введите корректное название пиццы
+          </div>
           <input
             type="text"
             name="adress"
             id="adress"
             placeholder="Адрес доставки"
-            [(ngModel)]="orderForm.adress"
+            formControlName="adress"
+            required
           />
+          <div
+            class="error_message"
+            *ngIf="adress?.errors?.['required'] && (adress?.touched || adress?.dirty)"
+          >
+            Введите адрес доставки
+          </div>
+          <div class="error_message" *ngIf="adress?.errors?.['minlength']">
+            Введите более подробный адрес
+          </div>
           <input
-            type="text"
+            type="tel"
             name="phone"
             id="phone"
+            required
             placeholder="Телефон"
-            [(ngModel)]="orderForm.phone"
+            formControlName="phone"
           />
-          <button type="submit">Оформить заказ</button>
-        </div>
+
+          <div
+            class="error_message"
+            *ngIf="phone?.errors?.['phone'].value === '' && (phone?.touched || phone?.dirty)"
+          >
+            Введите номер телефона
+          </div>
+          <div
+            class="error_message"
+            *ngIf="phone?.errors?.['phone'].value === ' ' || phone?.errors?.['phone'].value"
+          >
+            Введеный номер не валиден
+          </div>
+          <button
+            type="submit"
+            (click)="sendOrder()"
+            [disabled]="!orderForm.valid"
+          >
+            Оформить заказ
+          </button>
+        </form>
 
         <div class="order_form_image">
           <img src="{{ orderPizzaPathImg }}" alt="pizzaOrder" />
         </div>
       </div>
-    </section> -->
+    </section>
   </div>
 </div>

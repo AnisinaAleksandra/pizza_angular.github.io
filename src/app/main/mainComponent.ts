@@ -4,7 +4,7 @@ import { CartService } from '../service/cart-service';
 import { pizzasList } from './pizzasList';
 import { FormBuilder, Validators } from '@angular/forms';
 import { CustomValidators } from '../shared/custom-validators';
-import { Subject } from 'rxjs';
+import { Subject, catchError, of } from 'rxjs';
 
 @Component({
   selector: 'app-main',
@@ -13,7 +13,7 @@ import { Subject } from 'rxjs';
 })
 export class MainComponent implements OnInit {
   private _destroy$ = new Subject();
-
+  public load: boolean = false;
   public nameOfProduct: string = this.cartService.nameOfProduct;
   public imagePath: string = '../../assets/images/pizza_big.png';
   public pizzasList: Product[] = pizzasList;
@@ -57,7 +57,25 @@ export class MainComponent implements OnInit {
     target.scrollIntoView({ behavior: 'smooth' });
   }
   public sendOrder() {
-    console.log(this.orderForm.value);
+    this.cartService
+      .createOrder({
+        productTitle: this.newOrderForm.productTitle,
+        adress: this.newOrderForm.adress,
+        phone: this.newOrderForm.phone,
+      })
+      .pipe(
+        catchError((error) => {
+          setTimeout(() => {
+            alert('Спасибо за заказ');
+            this.load = false;
+          }, 3000);
+          this.load = true;
+          return of([]);
+        })
+      )
+      .subscribe((response) => {
+        this.orderForm.reset();
+      });
   }
   get phone() {
     return this.orderForm.get('phone');

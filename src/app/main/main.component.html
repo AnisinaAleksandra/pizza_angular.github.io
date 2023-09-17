@@ -146,7 +146,7 @@
           </div>
         </div>
 
-        <form class="order_form_inputs" [formGroup]="orderForm">
+        <form class="order_form_inputs" [formGroup]="orderForm" *ngIf="!load">
           <input
             required
             type="text"
@@ -214,6 +214,29 @@
           </button>
         </form>
 
+        <div class="lds-default" *ngIf="load">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <h1 mat-dialog-title>Favorite Animal</h1>
+        <div mat-dialog-content>
+          My favorite animal is:
+          <ul>
+            <li><span>&#10003;</span> Panda</li>
+            <li><span>&#10003;</span> Unicorn</li>
+            <li><span>&#10003;</span> Lion</li>
+          </ul>
+        </div>
         <div class="order_form_image">
           <img src="{{ orderPizzaPathImg }}" alt="pizzaOrder" />
         </div>

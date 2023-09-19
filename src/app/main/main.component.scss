@@ -312,6 +312,15 @@
           }
         }
       }
+      .order_form {
+        .my-container {
+          .order_form_image {
+            img {
+              width: 80%;
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -334,7 +343,7 @@
           margin-bottom: 30px;
         }
         .rigth_img_side {
-          margin-top: 100px;
+          margin-top: 250px;
         }
       }
     }

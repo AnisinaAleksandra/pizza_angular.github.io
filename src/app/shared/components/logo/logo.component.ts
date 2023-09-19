@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./logo.component.scss'],
 })
 export class LogoComponent {
-  imagePath = '../../../../assets/images/pizza.png';
+  imagePath = '/assets/images/pizza.png';
 }

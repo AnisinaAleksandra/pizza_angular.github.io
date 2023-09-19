@@ -16,9 +16,9 @@ export class MainComponent implements OnInit {
   private _destroy$ = new Subject();
   public load: boolean = false;
   public nameOfProduct: string = this.cartService.nameOfProduct;
-  public imagePath: string = '/assets/images/pizza_big.png';
+  public imagePath: string = './assets/images/pizza_big.png';
   public pizzasList: Product[] = pizzasList;
-  public orderPizzaPathImg: string = '/assets/images/pizzzzzaOrderForm.png';
+  public orderPizzaPathImg: string = './assets/images/pizzzzzaOrderForm.png';
 
   public newOrderForm!: { productTitle: ''; adress: ''; phone: '' };
 

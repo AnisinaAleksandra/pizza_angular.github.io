@@ -17,6 +17,7 @@
           }
           .title_yellow {
             color: $yellow-text-color;
+            margin-top: 30px;
           }
         }
         .list_of_advantages {
@@ -95,7 +96,7 @@
         justify-content: space-between;
         flex-direction: row;
         .order_form_delivery_text {
-          width: 380px;
+          max-width: 380px;
           .delivery_text_title {
             font-size: 35px;
             font-family: "MullerExtraBold";
@@ -119,6 +120,8 @@
         .order_form_inputs {
           display: flex;
           flex-direction: column;
+          margin-left: 5px;
+          margin-right: 5px;
           input {
             border: 1px solid $mustard-text-color;
             background-color: white;
@@ -199,6 +202,18 @@
   }
 }
 
+@media screen and (max-width: 1150px) {
+  .main_page {
+    .my-container {
+      .order_form {
+        .my-container {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
 @media screen and (max-width: 960px) {
   .main_page {
     padding-top: 90px;
@@ -339,10 +354,10 @@
 }
 
 .lds-default {
-  display: inline-block;
+  display: block;
   position: relative;
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 170px;
 }
 .lds-default div {
   position: absolute;

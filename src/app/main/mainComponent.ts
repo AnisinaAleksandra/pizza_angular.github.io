@@ -5,6 +5,7 @@ import { pizzasList } from './pizzasList';
 import { FormBuilder, Validators } from '@angular/forms';
 import { CustomValidators } from '../shared/custom-validators';
 import { Subject, catchError, of } from 'rxjs';
+import { ModalService } from '../service/modal.service';
 
 @Component({
   selector: 'app-main',
@@ -30,7 +31,11 @@ export class MainComponent implements OnInit {
     adress: ['', [Validators.required, Validators.minLength(10)]],
     phone: ['', [Validators.required, CustomValidators.phoneNumberValidator]],
   });
-  constructor(public cartService: CartService, private fb: FormBuilder) {
+  constructor(
+    public cartService: CartService,
+    private fb: FormBuilder,
+    private modalService: ModalService
+  ) {
     this.orderForm.valueChanges.subscribe((v: any) => {
       let reg = /[.]/g;
       if (v) {
@@ -53,10 +58,13 @@ export class MainComponent implements OnInit {
     });
   }
 
+  public openModal() {
+    this.modalService.open();
+  }
   public scrollTo(target: HTMLElement): void {
     target.scrollIntoView({ behavior: 'smooth' });
   }
-  public sendOrder() {
+  public sendOrder(target: HTMLElement) {
     this.cartService
       .createOrder({
         productTitle: this.newOrderForm.productTitle,
@@ -66,7 +74,8 @@ export class MainComponent implements OnInit {
       .pipe(
         catchError((error) => {
           setTimeout(() => {
-            alert('Спасибо за заказ');
+            this.scrollTo(target);
+            this.openModal();
             this.load = false;
           }, 3000);
           this.load = true;

@@ -17,7 +17,6 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
   constructor() {}
   ngOnInit(): void {}
-
   close() {
     this.toggle.nativeElement.checked = false;
   }

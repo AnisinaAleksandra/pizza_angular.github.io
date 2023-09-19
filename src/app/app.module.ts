@@ -9,7 +9,9 @@ import { LayoutComponent } from './shared/layout/layout.component';
 import { MainComponent } from './main/mainComponent';
 import { SharedModule } from './shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
 import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,9 +23,11 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule,
     ReactiveFormsModule,
     HttpClientModule,
+    SharedModule,
+    MdbModalModule,
+    // BrowserAnimationsModule.withConfig(config),
   ],
   providers: [],
   bootstrap: [AppComponent],

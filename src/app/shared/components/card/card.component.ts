@@ -32,9 +32,7 @@ export class CardComponent implements OnInit, AfterViewInit {
       this.item!.image
     })`;
   }
-  ngAfterViewInit() {
-    console.log(this.myImg.nativeElement);
-  }
+  ngAfterViewInit() {}
   serviceAddToCart(productName: string, target: HTMLElement) {
     this.serviceAddToCartService.nameOfProduct = productName;
     this.serviceAddToCartService.scrollTo(target);
